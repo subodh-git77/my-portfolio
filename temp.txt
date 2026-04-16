@@ -1,0 +1,155 @@
+import { ExternalLink, Github } from 'lucide-react';
+
+interface Project {
+  title: string;
+  description: string;
+  techStack: string[];
+  github: string;
+  demo?: string;
+  image: string;
+}
+
+const Projects = () => {
+  const projects: Project[] = [
+    {
+      title: 'E-Commerce Platform',
+      description:
+        'A full-featured e-commerce website with user authentication, product catalog, shopping cart, and payment integration.',
+      techStack: ['React', 'Node.js', 'MongoDB', 'Express'],
+      github: 'https://github.com/subodhkumar/ecommerce',
+      demo: '#',
+      image:
+        'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
+    },
+    {
+      title: 'Task Management App',
+      description:
+        'A responsive task manager with drag-and-drop functionality, due dates, priorities, and real-time collaboration features.',
+      techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Firebase'],
+      github: 'https://github.com/subodhkumar/task-manager',
+      image:
+        'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
+    },
+    {
+      title: 'Algorithm Visualizer',
+      description:
+        'Interactive web application to visualize sorting and pathfinding algorithms with step-by-step animations and explanations.',
+      techStack: ['JavaScript', 'HTML5', 'CSS3', 'Canvas API'],
+      github: 'https://github.com/subodhkumar/algo-visualizer',
+      demo: '#',
+      image:
+        'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=800',
+    },
+    {
+      title: 'Weather Dashboard',
+      description:
+        'Real-time weather application with location-based forecasts, interactive maps, and detailed weather statistics.',
+      techStack: ['React', 'OpenWeather API', 'Chart.js', 'CSS3'],
+      github: 'https://github.com/subodhkumar/weather-dashboard',
+      image:
+        'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800',
+    },
+    {
+      title: 'Portfolio Website',
+      description:
+        'Modern, responsive personal portfolio with dark mode, smooth animations, and interactive sections showcasing projects and skills.',
+      techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+      github: 'https://github.com/subodhkumar/portfolio',
+      demo: '#',
+      image:
+        'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
+    },
+    {
+      title: 'Chat Application',
+      description:
+        'Real-time messaging application with user authentication, group chats, file sharing, and emoji support.',
+      techStack: ['React', 'Socket.io', 'Node.js', 'MongoDB'],
+      github: 'https://github.com/subodhkumar/chat-app',
+      image:
+        'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800',
+    },
+  ];
+
+  return (
+    <section
+      id="projects"
+      className="py-20 bg-white dark:bg-gray-900"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Featured <span className="bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">Projects</span>
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-teal-400 mx-auto mb-4"></div>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            A collection of projects that showcase my skills in web development,
+            problem-solving, and software engineering.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="group bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700"
+            >
+              <div className="relative overflow-hidden h-48">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-200">
+                  {project.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.techStack.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className="px-3 py-1 bg-blue-100 dark:bg-gray-700 text-blue-600 dark:text-teal-400 rounded-full text-xs font-medium"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex gap-4">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-teal-400 transition-colors"
+                  >
+                    <Github size={20} />
+                    <span className="text-sm font-medium">Code</span>
+                  </a>
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-teal-400 transition-colors"
+                    >
+                      <ExternalLink size={20} />
+                      <span className="text-sm font-medium">Demo</span>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
