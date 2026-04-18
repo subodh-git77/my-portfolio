@@ -6,7 +6,7 @@ Designed to showcase projects, skills, and experience with a clean UI and smooth
 ---
 
 ## 🚀 Live Demo
-👉 https://sk-portfolio1.vercel.app  
+👉 https://sk9-portfolio.vercel.app
 
 ---
 
