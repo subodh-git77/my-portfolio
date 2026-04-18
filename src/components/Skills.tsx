@@ -95,7 +95,7 @@ const Skills = () => {
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="text-center p-6 bg-white dark:bg-gray-900 rounded-xl shadow-lg">
             <div className="text-4xl font-bold bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent mb-2">
-              500+
+              150+
             </div>
             <div className="text-gray-600 dark:text-gray-400">
               DSA Problems Solved
